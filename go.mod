@@ -1,3 +1,7 @@
 module github.com/JhonMos/alumnitweet
 
-require ()
+go 1.17
+
+require (
+
+)
