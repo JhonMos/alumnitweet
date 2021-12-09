@@ -21,6 +21,7 @@ func Manejadores() {
 	router.HandleFunc("/tweet", middlew.ChequeoDb(middlew.ValidoJWT(routers.GraboTweet))).Methods("POST")
 	router.HandleFunc("/leoTweets", middlew.ChequeoDb(middlew.ValidoJWT(routers.LeoTweets))).Methods("GET")
 	router.HandleFunc("/eliminarTweet", middlew.ChequeoDb(middlew.ValidoJWT(routers.EliminarTweet))).Methods("DELETE")
+
 	router.HandleFunc("/subirAvatar", middlew.ChequeoDb(middlew.ValidoJWT(routers.SubirAvatar))).Methods("POST")
 	router.HandleFunc("/obtenerAvatar", middlew.ChequeoDb(routers.ObtenerAvatar)).Methods("GET")
 	router.HandleFunc("/subirBanner", middlew.ChequeoDb(middlew.ValidoJWT(routers.SubirBanner))).Methods("POST")
