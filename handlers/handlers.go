@@ -27,6 +27,8 @@ func Manejadores() {
 	router.HandleFunc("/subirBanner", middlew.ChequeoDb(middlew.ValidoJWT(routers.SubirBanner))).Methods("POST")
 	router.HandleFunc("/obtenerBanner", middlew.ChequeoDb(routers.ObtenerBanner)).Methods("GET")
 
+	router.HandleFunc("/altaRelacion", middlew.ChequeoDb(middlew.ValidoJWT(routers.AltaRelacion))).Methods("POST")
+
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
 		PORT = "8080"
